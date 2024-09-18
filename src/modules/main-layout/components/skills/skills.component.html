@@ -1,0 +1,12 @@
+<div fxLayout="column" class="skills-class">
+    <h2>Skills</h2>
+    <mat-tab-group [selectedIndex]="activeIndex" (selectedIndexChange)="setActiveIndex($event)">
+        <mat-tab fxLayout="row" label="{{items.heading}}" *ngFor="let items of skillSets">
+            <div class="card-class m-r-xs" *ngFor="let item of items.skillDetails">
+                <img class="img-class" src="../../../../assets/images/{{item.srcPath}}" alt="{{item.altName}}" />
+                <span class="m-l-xs">{{item.skill}}</span>
+            </div>
+        </mat-tab>
+
+    </mat-tab-group>
+</div>

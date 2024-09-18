@@ -1,0 +1,13 @@
+<div fxLayout="row" class="home-class" fxLayoutGap="1rem">
+    <ng-container>
+        <div fxFlex="50%" fxLayoutAlign="center flex-start">
+            <img class="angular-img-class" src="../../../../assets/images/angular-logo.svg" alt="Angular Icon" />
+        </div>
+        <div fxLayout="column" fxLayoutAlign="center flex-start">
+            <h2>{{pageContent.welcomeMsg}}</h2>
+            <span class="m-t-xs m-r-xs">{{pageContent.longDescription1}}</span>
+            <button class="btn-class" (click)="moveToSkills()">Check out my skills</button>
+
+        </div>
+    </ng-container>
+</div>
