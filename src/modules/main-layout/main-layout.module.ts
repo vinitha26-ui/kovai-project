@@ -8,20 +8,27 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { SkillsComponent } from './components/skills/skills.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { HireComponent } from './components/hire/hire.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from "@angular/material/form-field";
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     PortfolioComponent,
-    SkillsComponent
+    SkillsComponent,
+    HireComponent
   ],
   imports: [
     CommonModule,
     MainLayoutRoutingModule,
     FlexLayoutModule,
     MatExpansionModule,
-    MatTabsModule
+    MatTabsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule
   ]
 })
 export class MainLayoutModule { }

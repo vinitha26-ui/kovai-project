@@ -1,6 +1,6 @@
 <div fxLayout="row" class="header-class" fxLayoutAlign="center center">
     <div>{{name}}</div>
     <div class="navigation-class">
-        <div class="m-l-xs" *ngFor="let item of navigationItems" [routerLink]="item.link">{{item.description}}</div>
+        <div class="m-l-xs" *ngFor="let item of navigationItems" [routerLink]="item.link" (click)="onNavigationClick()">{{item.description}}</div>
     </div>
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ContentService } from '../../services/content.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -8,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class PortfolioComponent implements OnInit {
   projectDetails: any[] = [];
   selectedCategory: Number = 0;
-  constructor() {
+  hirePage = false;
+  constructor(private router: Router, private contentService: ContentService) {
     this.projectDetails = [
       {
         heading: 'IT Analyst',
@@ -60,11 +63,24 @@ export class PortfolioComponent implements OnInit {
       }
     ]
   }
-
+  
   ngOnInit(): void {
+    this.hirePage = JSON.parse(JSON.stringify(window.sessionStorage.getItem('hirePage'))) ;
+    this.contentService.getHirePage().subscribe((data : any)=>{
+      this.hirePage = data ? data : false;
+    });
   }
   onExpand(index: number) {
     this.selectedCategory = index;
+  }
+  moveToHirePage(){
+    this.hirePage = true;
+    window.sessionStorage.setItem('hirePage',JSON.stringify(this.hirePage));
+    this.contentService.setHirePage(this.hirePage);
+    this.router.navigate(['portfolio/hire']);
+  }
+  ngOnDestroy(){
+    window.sessionStorage.removeItem('hirePage');
   }
 
 }

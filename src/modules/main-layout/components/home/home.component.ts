@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   contentName: string;
   pageContent: any;
-  loader = true;
 
   constructor(private contentService: ContentService, private router: Router) {
     this.contentName = 'homeComponent';
@@ -20,12 +19,7 @@ export class HomeComponent implements OnInit {
 
     this.contentService.contentService(this.contentName).subscribe(content => {
       this.pageContent = content;
-      this.loader = false;
-    },
-      error => {
-        this.pageContent = '';
-        this.loader = false;
-      })
+    });
   }
 
   moveToSkills() {

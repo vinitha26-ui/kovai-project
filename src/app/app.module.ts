@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from "@angular/material/form-field";
 
 
 
@@ -26,7 +28,10 @@ import { MatTabsModule } from '@angular/material/tabs';
     HttpClientModule,
     MatExpansionModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule
   ],
   exports: [
     HeaderComponent,

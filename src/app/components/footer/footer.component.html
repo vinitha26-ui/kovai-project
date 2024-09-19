@@ -10,7 +10,7 @@
     <div fxFlex="25%" fxLayout="column" class="navigation-class">
         <div>Follow Me</div>
         <div *ngFor="let item of navigationItems" [routerLink]="item.link">
-            <img class="img-class" src="assets/images/{{item.srcPath}}" [alt]="item.altName"
+            <img class="img-class pointer-class" src="assets/images/{{item.srcPath}}" [alt]="item.altName"
                 (click)="moveToUrl(item.link)" />
         </div>
     </div>

@@ -1,10 +1,10 @@
-<div class="portfolio-class" fxLayout="column">
+<div class="portfolio-class" fxLayout="column" *ngIf="!hirePage">
     <h2>Portfolio</h2>
     <mat-accordion class="accordion-class m-l-xs" *ngFor="let items of projectDetails; let i = index;">
         <mat-expansion-panel class="panel-class" [expanded]="i === selectedCategory" (opened)="onExpand(i)">
             <mat-expansion-panel-header>
                 <span fxLayout="column">
-                    <span>{{items.heading}}</span>
+                    <h3>{{items.heading}}</h3>
                     <span>{{items.subHeading}}</span>
                 </span>
             </mat-expansion-panel-header>
@@ -14,4 +14,8 @@
             </ul>
         </mat-expansion-panel>
     </mat-accordion>
+    <button class="btn-class pointer-class btn-width" (click)="moveToHirePage()">Hire Me</button>
+</div>
+<div *ngIf="hirePage">
+<router-outlet></router-outlet>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContentService } from 'src/modules/main-layout/services/content.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ export class HeaderComponent implements OnInit {
   navigationItems: any[] = [];
   name: string;
 
-  constructor() {
+  constructor(private contentService: ContentService) {
     this.name = 'Vinitha R';
     this.navigationItems = [
       {
@@ -25,5 +26,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  onNavigationClick() {
+    window.sessionStorage.removeItem('hirePage');
+    this.contentService.setHirePage(false);
+  }
+
 
 }

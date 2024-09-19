@@ -1,0 +1,28 @@
+<div class="hire-class">
+    <form [formGroup]="form" (ngSubmit)="send()" *ngIf="form">
+        <h1>
+            Contact Form
+        </h1>
+        <div fxLayout="column" fxLayout.lt-md="column" class="m-b-xs form-class" fxLayoutGap="1rem">
+            <label for="name">Name</label>
+            <input formControlName="name" type="text" id="name" name="name" class="input-class" />
+            <mat-error
+                *ngIf="this.form?.controls['name']?.errors && (this.form?.controls['name']?.touched || this.form?.controls['name']?.dirty)">Please
+                enter a valid name</mat-error>
+        </div>
+        <div fxLayout="column" fxLayout.lt-md="column" class="m-b-xs form-class" fxLayoutGap="1rem">
+            <label for="email">Email</label>
+            <input formControlName="email" type="email" id="email" name="email" class="input-class" />
+            <mat-error
+                *ngIf="this.form.controls['email']?.errors && (this.form.controls['email']?.touched || this.form.controls['email']?.dirty)">Please
+                enter a valid email</mat-error>
+        </div>
+        <div fxLayout="column" fxLayout.lt-md="column" class="m-b-xs form-class" fxLayoutGap="1rem">
+            <label for="message">Message</label>
+            <textarea formControlName="message" id="message" name="message" class="text-area-class"></textarea>
+        </div>
+        <button type="submit" class="btn-class" [disabled]="!this.form.valid">
+            Send
+        </button>
+    </form>
+</div>

@@ -20,4 +20,13 @@ describe('SkillsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should set active index on click of this function', () => {
+    const index =0;
+    component.setActiveIndex(index);
+     expect(index).toEqual(0);
+ 
+ });
+ afterEach(() => {
+  fixture.destroy();
+});
 });

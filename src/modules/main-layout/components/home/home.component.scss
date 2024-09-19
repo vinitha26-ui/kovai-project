@@ -6,16 +6,4 @@
         width: 15rem;
     }
 
-    .btn-class {
-        background: none;
-        margin-top: 1rem;
-        border: none;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        padding: 0.5rem 1rem;
-        border-radius: 3px;
-
-        &:hover {
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-        }
-    }
 }
