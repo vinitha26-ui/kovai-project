@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { provideRouter, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
@@ -10,14 +10,8 @@ const routes: Routes = [
 
 @NgModule({
 
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{useHash: true})],
   exports: [RouterModule],
-  providers: [
-    provideRouter(routes, withHashLocation()),
-  ],
+  
 })
 export class AppRoutingModule { }
-function withHashLocation(): import("@angular/router").RouterFeatures {
-  throw new Error('Function not implemented.');
-}
-
