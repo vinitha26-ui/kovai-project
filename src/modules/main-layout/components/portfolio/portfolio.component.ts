@@ -9,7 +9,7 @@ import { ContentService } from '../../services/content.service';
 })
 export class PortfolioComponent implements OnInit {
   projectDetails: any[] = [];
-  selectedCategory: Number = 0;
+  selectedCategory: any = 0;
   hirePage = false;
   constructor(private router: Router, private contentService: ContentService) {
     this.projectDetails = [
@@ -76,7 +76,12 @@ export class PortfolioComponent implements OnInit {
     }
   }
   onExpand(index: number) {
-    this.selectedCategory = index;
+    if(this.selectedCategory === index){
+      this.selectedCategory = undefined;
+    }else{
+      this.selectedCategory = index;
+    }
+
   }
   moveToHirePage(){
     this.hirePage = true;
