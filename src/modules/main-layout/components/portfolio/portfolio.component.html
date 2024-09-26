@@ -1,20 +1,26 @@
 <div class="portfolio-class" fxLayout="column" *ngIf="!hirePage">
     <h2>Portfolio</h2>
-    <mat-accordion class="accordion-class m-l-xs" *ngFor="let items of projectDetails; let i = index;">
-        <mat-expansion-panel class="panel-class" [expanded]="i === selectedCategory" (opened)="onExpand(i)">
-            <mat-expansion-panel-header>
-                <span fxLayout="column">
-                    <h3>{{items.heading}}</h3>
-                    <span>{{items.subHeading}}</span>
-                </span>
-            </mat-expansion-panel-header>
+    <div class="panel-class m-l-xs" *ngFor="let items of projectDetails; let i = index;" (click)="onExpand(i)">
+        <div fxLayout="row">
+            <span fxLayout="column">
+                <h3>{{items.heading}}</h3>
+                <span>{{items.subHeading}}</span>
+            </span>
+            <span class="place-end">
+                <img class="down-arrow" src="assets/images/down-arrow.svg" alt="down-arrow icon"/>
+            </span>
+        </div>
 
+        <div *ngIf="i === selectedCategory" >
+           
             <ul *ngFor="let role of items.roleDescription">
                 <li>{{role.roles}}</li>
             </ul>
-        </mat-expansion-panel>
-    </mat-accordion>
+        </div>
+    </div>
+    <div class="place-end">
     <button class="btn-class pointer-class btn-width" (click)="moveToHirePage()">Hire Me</button>
+</div>
 </div>
 <div *ngIf="hirePage">
 <router-outlet></router-outlet>

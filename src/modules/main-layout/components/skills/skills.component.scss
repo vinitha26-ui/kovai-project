@@ -12,37 +12,9 @@
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         border-radius: 5px;
         padding: 1rem;
+        width:20rem;
     }
-
-    ::ng-deep {
-        .mat-tab-body-content {
-            margin-bottom: 1rem;
-        }
+    .black-underline{
+        border-bottom: 1px solid black;
     }
-
-    ::ng-deep {
-        .mat-tab-body-wrapper {
-            width: 20em;
-            margin: 1rem 0rem;
-        }
-    }
-
-    ::ng-deep {
-        .mat-tab-body {
-            overflow-y: hidden;
-        }
-    }
-
-    ::ng-deep {
-        .mat-tab-label-active {
-            border-bottom: 1px solid black;
-        }
-    }
-
-    ::ng-deep {
-        .mat-tab-label {
-            justify-content: left;
-        }
-    }
-
 }

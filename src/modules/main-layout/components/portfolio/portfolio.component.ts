@@ -69,6 +69,11 @@ export class PortfolioComponent implements OnInit {
     this.contentService.getHirePage().subscribe((data : any)=>{
       this.hirePage = data ? data : false;
     });
+    if(window.location.href.includes('hire')){
+      this.hirePage = true;
+    }else{
+      this.hirePage = false;
+    }
   }
   onExpand(index: number) {
     this.selectedCategory = index;

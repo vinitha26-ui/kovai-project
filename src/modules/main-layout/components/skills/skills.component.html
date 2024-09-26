@@ -1,12 +1,12 @@
 <div fxLayout="column" class="skills-class">
     <h2>Skills</h2>
-    <mat-tab-group [selectedIndex]="activeIndex" (selectedIndexChange)="setActiveIndex($event)">
-        <mat-tab fxLayout="row" label="{{items.heading}}" *ngFor="let items of skillSets">
-            <div class="card-class m-r-xs" *ngFor="let item of items.skillDetails">
-                <img class="img-class" src="assets/images/{{item.srcPath}}" alt="{{item.altName}}" />
-                <span class="m-l-xs">{{item.skill}}</span>
-            </div>
-        </mat-tab>
-
-    </mat-tab-group>
+    <div fxLayout="row" fxLayoutGap="2rem" class="m-b-xs">
+    <div  *ngFor="let items of skillSets;let i = index;" (click)="setActiveIndex(i)">
+       <span [ngClass]="i === activeIndex ? 'black-underline':''">{{items.heading}}</span> 
+    </div>
+    </div>
+    <div class="card-class m-r-xs p-b-xxs" *ngFor="let item of skillSets[activeIndex].skillDetails">
+        <img class="img-class" src="assets/images/{{item.srcPath}}" alt="{{item.altName}}" />
+        <span class="m-l-xs">{{item.skill}}</span>
+    </div>
 </div>
